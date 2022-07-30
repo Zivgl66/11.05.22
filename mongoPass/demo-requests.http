@@ -1,0 +1,37 @@
+POST http://localhost:3002/api/users
+Content-Type: application/json
+
+{
+    "name": "Tomer", 
+    "email":"Tomerbu2@gmail.com",
+    "password":"123456",
+    "biz": true
+}
+
+### test auth:
+POST http://localhost:3002/api/auth
+Content-Type: application/json
+
+{
+    "email":"Tomerbu@gmail.com",
+    "password":"123456"
+}
+
+
+### test /api/users/me with query
+GET  http://localhost:3002/api/users/me?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdiNWRmODlhNWI5ZDlmMWUyNzQ3OTIiLCJpYXQiOjE2NTIyNjAwODN9.Fln6LRZwrbWcL6dUI8rYKK6hg06LzlFiE-0-PtO4oQ0
+
+
+
+### Post to /api/cards:
+POST http://localhost:3002/api/cards
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdiNWRmODlhNWI5ZDlmMWUyNzQ3OTIiLCJpYXQiOjE2NTIyNjAwODN9.Fln6LRZwrbWcL6dUI8rYKK6hg06LzlFiE-0-PtO4oQ0
+Content-Type: application/json
+
+{
+    "bizName":"Biz Name 1",
+    "bizDescription":"Biz Desc 1",
+    "bizAddress":"Biz Address, Israel!",
+    "bizPhone": "03-6135565"
+}
+
